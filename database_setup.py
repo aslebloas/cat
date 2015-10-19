@@ -3,6 +3,7 @@ from sqlalchemy import Column, ForeignKey, Integer, String, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
+import psycopg2
 Base = declarative_base()
 
 
@@ -82,6 +83,7 @@ class Item(Base):
         content.append("</Item>")
 
 # insert at end of file
-engine = create_engine('sqlite:///items.db')
+# engine = create_engine('sqlite:///items.db')
+engine = create_engine('postgresql+psycopg2://catalog:udacity@localhost/items')
 
 Base.metadata.create_all(engine)

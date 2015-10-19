@@ -1,0 +1,30 @@
+# Client Secret and first migration #
+###################
+*.json
+
+# 
+*.wsgi
+
+
+# Compiled python modules #
+######################
+*.db
+*.pyc
+*.sqlite
+
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+/*.egg-info
+
+*.DS_Store

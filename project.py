@@ -13,6 +13,7 @@ from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from werkzeug import secure_filename
+import psycopg2
 
 import httplib2
 import json
@@ -22,6 +23,7 @@ import string
 
 # setup flask
 app = Flask(__name__)
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://catalog:udacity@localhost/items"  # noqa
 
 # FILE UPLOAD
 UPLOAD_FOLDER = 'UPLOAD_FOLDER/'
@@ -40,7 +42,8 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Catalog"
 
 # Connect to Database and create database session
-engine = create_engine('sqlite:///items.db')
+# engine = create_engine('sqlite:///items.db')
+engine = create_engine('postgresql:///items')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
