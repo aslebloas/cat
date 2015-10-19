@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 center">
+
+    <h1>List of goals in {{ category.name }}</h1>
+    {% if category.user_id == session['user_id'] %}
+    <div id="commands">
+      <span><a href="{{ url_for('editCategory', category_id=category.id)}}">Edit {{ category.name }}'s details</a></span>
+      |<span><a href="{{ url_for('deleteCategory', category_id=category.id)}}"> Delete {{ category.name }}</a></span>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 center">
+    <hr>
+    
+    {% if items %}
+      
+      {% for item in items %}
+        <div class="col-md-6">
+          <div class="item-cards">
+            
+            <div><!-- Item Image -->
+              <a href="{{ url_for('showItem', category_id=category.id, item_id=item.id ) }}"><img src="{{ item.image }}" alt=""></a>
+            </div>
+            
+            <div>
+              <h3><a href="{{ url_for('showItem', category_id=category.id, item_id=item.id ) }}">
+              {{ item.name }}
+              </a></h3>
+              <p>{{ item.date }}</p>
+            </div>
+          </div>
+
+        </div> 
+      {% endfor %}
+      <div id="newgift"><a href="{{ url_for('newItem', category_id=category.id) }}"><i class="fa fa-plus"></i> Add new goal</a></div></div>
+
+    {% else %}
+      <p>There are no goals in {{ category.name }} yet</p><a href="{{ url_for('newItem', category_id=category.id) }}"><br>Add new goal</a></div>
+    {% endif %}
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <hr>
+    <a href="{{ url_for('showCategories') }}">Back</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+body {
+  margin-top: 50px;
+  min-height: 500px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+  margin: 30px auto;
+}
+
+a {
+  color: rgb(33, 160, 201);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(33, 160, 201);
+  text-decoration: none;
+}
+
+#goals {
+  border-left: solid 1px rgb(126,151,186);
+}
+
+#categories {
+  margin-bottom: 20px;
+}
+
+#item img {
+  width: 100%;
+  max-height: 245px;
+  margin-top: 23px
+}
+
+#listOfCategories img {
+  width: 100%
+}
+
+#listOfItems {
+  margin-top: 30px;
+}
+#listOfItems img {
+  width: 30%;
+  max-height: 70px;
+}
+
+#form {
+  text-align: center;
+}
+.item-cards {
+  box-shadow: 0 0 3px gray;
+  padding: 20px;
+  text-align: center;
+  height: 285px;
+  margin-bottom: 20px;
+}
+.item-cards img {
+  max-width: 290px;
+  max-height: 184px;
+}
+
+.center {
+  text-align: center;
+}
+
+.flash {
+  text-align: center;
+  padding-top: 10px;
+  color: #18CA1C;
+}
+
+.date {
+  color: rgb(33, 160, 201);
+  padding-top: 16px;
+}
+
+
+/* NAVBAR */
+
+  #add-nav {
+    position: absolute;
+    padding-top: 15px;
+    font-size: 17px
+  }
+  .navbar {
+    background-color: rgb(231, 236, 243);
+    border-color: rgb(126,151,186);
+    color: rgb(33, 160, 201);
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .navbar-brand
+  {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+  }
+  .navbar-right {
+    padding-top: 15px;
+    font-size: 17px
+  }
+
+  #logo {
+    color: rgb(33, 160, 201);
+    font-size: 32px;
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    #logo {
+      font-size: 22px;
+    }
+  }
+
+  #login {
+    border-radius:25px;
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+/* LOGIN */
+
+  #fb-login {
+    vertical-align: 15px;
+  }
+
+  #btn-login, #signInButton {
+    margin: 10px;
+  }
+

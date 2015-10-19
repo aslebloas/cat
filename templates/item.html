@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="row">
+  <div id="item" class="col-md-8 col-md-offset-2">
+    <div class="col-md-4">
+      <img src="{{ item.image }}" alt="">
+    </div>
+    <div class="col-md-8">
+      
+      <h1>{{ item.name }}</h1>
+      {% if item.user_id == session['user_id'] %}
+        <div id="commands">
+          <span><a href="{{ url_for('editItem', category_id=category.id, item_id=item.id)}}">Edit</a></span>
+          |<span><a href="{{ url_for('deleteItem', category_id=category.id, item_id=item.id)}}"> Delete</a></span>
+        </div>
+      {% endif %}
+      <div><p>Target Date: {{ item.date }}</p></div>
+      <div><p>Description: {{ item.description }}</p></div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <hr>
+    <a href="{{ url_for('showCategories') }}">Back</a>
+  </div>
+</div>
+
+{% endblock %}
